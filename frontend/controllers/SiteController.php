@@ -111,8 +111,8 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
+
     }
 
     /**
@@ -191,7 +191,21 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+        
+    public function actionForm(){
+        if(Yii::$app->request->post())
+        {
+           
+          
+          // var_dump($_GET);
+            $plik = $_FILES['obr']['tmp_name'];
+            $nazwa =  md5(uniqid(time())).'jpg';
+          move_uploaded_file($plik,Yii::$app->basePath.'/web/wasd'.$nazwa);
+                var_dump($_POST);
 
+        }
+        return $this->vendor('index');
+    }
     /**
      * Resets password.
      *
@@ -216,5 +230,6 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+        
     }
 }
