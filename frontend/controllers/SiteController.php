@@ -12,7 +12,6 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\User;
 
 /**
  * Site controller
@@ -22,12 +21,6 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-    public function actionLista() 
-            {
-        $records = User::find()->all();
-        return  $this->render("Lista", ["witam"=>$records]);
-        
-    }
     public function behaviors()
     {
         return [
