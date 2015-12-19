@@ -1,0 +1,9 @@
+diff a/frontend/controllers/TestController.php b/frontend/controllers/TestController.php	(rejected hunks)
+@@ -0,6 +0,7 @@
+ namespace frontend\controllers;
+ 
+ use Yii;
++use yii\web\Controller;
+ use yii\filters\VerbFilter;
+ use yii\filters\AccessControl;
+ use common\models\User;
