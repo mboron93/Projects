@@ -12,7 +12,6 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\User;
 
 /**
  * Site controller
@@ -22,12 +21,6 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-    public function actionLista() 
-            {
-        $records = User::find()->all();
-        return  $this->render("Lista", ["witam"=>$records]);
-        
-    }
     public function behaviors()
     {
         return [
@@ -111,8 +104,8 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-        return $this->goHome();
 
+        return $this->goHome();
     }
 
     /**
@@ -191,21 +184,7 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-        
-    public function actionForm(){
-        if(Yii::$app->request->post())
-        {
-           
-          
-          // var_dump($_GET);
-            $plik = $_FILES['obr']['tmp_name'];
-            $nazwa =  md5(uniqid(time())).'jpg';
-          move_uploaded_file($plik,Yii::$app->basePath.'/web/wasd'.$nazwa);
-                var_dump($_POST);
 
-        }
-        return $this->vendor('index');
-    }
     /**
      * Resets password.
      *
@@ -230,6 +209,5 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
-        
     }
 }
