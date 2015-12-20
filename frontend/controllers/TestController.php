@@ -42,7 +42,15 @@ class TestController extends Controller
     }
     
     public function actionPokazkoszyk() {
-        var_dump(Yii::$app->session->get('zamowione'));exit;
+        var_dump(Yii::$app->session->get('zamowione'));
+        $koszyk=Yii::$app->session->get('zamowione');
+   
+         if (is_array($koszyk)) {
+            foreach ($koszyk as $pozycja) {
+                echo $pozycja['nazwa'].' '.$pozycja['cena']."zł <br/>";
+            }
+        }
+        exit;
     }
     
     private function podsumujKoszyk()
