@@ -16,12 +16,9 @@ class KoszykController extends \yii\web\Controller
          public function actionIndex()//wyświetlanie
     {
         $koszyk = Yii::$app->session->get('zamowione');
-        
-           
 
         return $this->render('index', ['settings' => $koszyk]);
-            
-          
+        
              //brak danych
            //id //nazwa //porcja // ilosc //cena
     
@@ -52,10 +49,20 @@ class KoszykController extends \yii\web\Controller
             return $this->render('index',['settings' => $koszyk]);
     }
     
-    public function actionUsun()
+    public function actionUsun($id)
     {
-        $nazwa= Yii::$app->session->set('zamowione',[]);
-        \Yii::$app->getSession()->setFlash('warning', 'Usunięto');
+        $koszyk = Yii::$app->session->get('zamowione');
+        $nowykoszyk = [];
+        
+         if (is_array($koszyk)) {
+            foreach ($koszyk as $pozycja) {
+                if ($pozycja['id'] != $id) {
+                    $nowykoszyk[] = $pozycja;
+                }
+            }
+         $koszyk= Yii::$app->session->set('zamowione',[$nowykoszyk]);
+         \Yii::$app->getSession()->setFlash('success', 'Usunęto pozycję: '.$id);
+        }
         return $this->render('index');
 
     }    
