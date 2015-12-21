@@ -11,12 +11,13 @@ use yii\widgets\ActiveForm;
 
 if(isset($settings)){
 foreach ($settings as $index) {
-    echo $index['id'].' '.$index['nazwa'].' '.$index['porcja'].' '.$index['ilosc'].'szt '.$index['cena'].'zł <a href="'.$index['id'].'">-</a><br/>';
+    echo $index['id'].' '.$index['nazwa'].' '.$index['porcja'].' '.$index['ilosc'].'szt '.$index['cena'].'zł <a href="/koszyk/usun?id='.$index['id'].'">-</a><br/>';
 }
-}else
+}
+/*else if(!isset($settings)){
          \Yii::$app->getSession()->setFlash('warning', 'Koszyk posty');
-
-
+}
+*/
 
 ?>
 </p>
