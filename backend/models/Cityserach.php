@@ -1,16 +1,16 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\WyborMiast;
+use common\models\City;
 
 /**
- * WyborMiastSearch represents the model behind the search form about `app\models\WyborMiast`.
+ * Cityserach represents the model behind the search form about `common\models\City`.
  */
-class WyborMiastSearch extends WyborMiast
+class Cityserach extends City
 {
     /**
      * @inheritdoc
@@ -41,9 +41,7 @@ class WyborMiastSearch extends WyborMiast
      */
     public function search($params)
     {
-        $query = WyborMiast::find();
-
-        // add conditions that should always apply here
+        $query = City::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,7 +55,6 @@ class WyborMiastSearch extends WyborMiast
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'id_miasta' => $this->id_miasta,
         ]);

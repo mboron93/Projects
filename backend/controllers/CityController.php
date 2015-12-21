@@ -1,41 +1,38 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use Yii;
-use app\models\WyborMiast;
-use app\models\WyborMiastSearch;
+use common\models\City;
+use backend\models\Cityserach;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * WybormiastController implements the CRUD actions for WyborMiast model.
+ * CityController implements the CRUD actions for City model.
  */
-class WybormiastController extends Controller
+class CityController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['post'],
                 ],
             ],
         ];
     }
 
     /**
-     * Lists all WyborMiast models.
+     * Lists all City models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new WyborMiastSearch();
+        $searchModel = new Cityserach();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +42,7 @@ class WybormiastController extends Controller
     }
 
     /**
-     * Displays a single WyborMiast model.
+     * Displays a single City model.
      * @param integer $id
      * @return mixed
      */
@@ -57,13 +54,13 @@ class WybormiastController extends Controller
     }
 
     /**
-     * Creates a new WyborMiast model.
+     * Creates a new City model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new WyborMiast();
+        $model = new City();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_miasta]);
@@ -75,7 +72,7 @@ class WybormiastController extends Controller
     }
 
     /**
-     * Updates an existing WyborMiast model.
+     * Updates an existing City model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -94,7 +91,7 @@ class WybormiastController extends Controller
     }
 
     /**
-     * Deletes an existing WyborMiast model.
+     * Deletes an existing City model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -107,15 +104,15 @@ class WybormiastController extends Controller
     }
 
     /**
-     * Finds the WyborMiast model based on its primary key value.
+     * Finds the City model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return WyborMiast the loaded model
+     * @return City the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = WyborMiast::findOne($id)) !== null) {
+        if (($model = City::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

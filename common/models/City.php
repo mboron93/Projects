@@ -1,25 +1,25 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
 use Yii;
 
 /**
- * This is the model class for table "wybor_miast".
+ * This is the model class for table "city".
  *
  * @property integer $id_miasta
  * @property string $miasto
  *
- * @property Restauracje[] $restauracjes
+ * @property Restaurant[] $restaurants
  */
-class WyborMiast extends \yii\db\ActiveRecord
+class City extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'wybor_miast';
+        return 'city';
     }
 
     /**
@@ -29,7 +29,7 @@ class WyborMiast extends \yii\db\ActiveRecord
     {
         return [
             [['miasto'], 'required'],
-            [['miasto'], 'string', 'max' => 30],
+            [['miasto'], 'string', 'max' => 30]
         ];
     }
 
@@ -47,17 +47,8 @@ class WyborMiast extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getRestauracjes()
+    public function getRestaurants()
     {
-        return $this->hasMany(Restauracje::className(), ['id_miasta' => 'id_miasta']);
-    }
-
-    /**
-     * @inheritdoc
-     * @return WyborMiastQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new WyborMiastQuery(get_called_class());
+        return $this->hasMany(Restaurant::className(), ['id_miasta' => 'id_miasta']);
     }
 }

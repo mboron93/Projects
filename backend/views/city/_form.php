@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\WyborMiast */
+/* @var $model common\models\City */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="wybor-miast-form">
+<div class="city-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
