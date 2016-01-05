@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models;
+namespace app\models;
 
 use Yii;
 
@@ -14,9 +14,7 @@ use Yii;
  */
 class City extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
+
     public static function tableName()
     {
         return 'city';
@@ -29,15 +27,13 @@ class City extends \yii\db\ActiveRecord
     {
         return [
             [['miasto'], 'required'],
-            [['miasto'], 'string', 'max' => 30]
+            [['miasto'], 'string', 'max' => 30],
         ];
     }
 
-    public function pobieranie()
-    {
-        
-    }
-    
+    /**
+     * @inheritdoc
+     */
     public function attributeLabels()
     {
         return [
@@ -45,6 +41,7 @@ class City extends \yii\db\ActiveRecord
             'miasto' => 'Miasto',
         ];
     }
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -52,4 +49,5 @@ class City extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Restaurant::className(), ['id_miasta' => 'id_miasta']);
     }
+   
 }
