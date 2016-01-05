@@ -7,9 +7,6 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
     <div class="jumbotron">
-        <a href="city"><button type="button" class="btn active btn-primary">
-             Miasta
-        </button></a>
         <h1>Strona startowa -? (1)</h1>
 
         <p class="lead">Wybór miasta, kategorię jedzienia, przepierowanie na wybór restauracji i przekierowanie na listę dań.
