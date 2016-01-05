@@ -9,7 +9,6 @@ Wybierz:<br/>
        <input type="submit" value="Wyslij"/>
  </form>
 <img src="/ussing/<?=$nazwa?>">
-<?= yii\bootstrap\Progress::widget(['percent' => 60, 'label' => 'test']) ?>
 <a href="javascript:void(0)" id="dodaj">Dodaj do koszyka</a>
 <?php
 foreach($users as $user) {

@@ -30,15 +30,6 @@ class DishController extends Controller
      * Lists all Dish models.
      * @return mixed
      */
-    
-    public function actionTest()
-    {
-        $model = new Dish();
-        $model->getOrders();
-
-      
-    }
-    
     public function actionIndex()
     {
         $searchModel = new DishSearch();

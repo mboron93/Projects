@@ -17,7 +17,6 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property integer $status
- * @property integer $flag
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
@@ -26,10 +25,6 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
-    
-    const U_ADMIN = 10;
-    const U_RESTAURANT = 5;
-    const U_NORMAL = 0;
 
     /**
      * @inheritdoc
@@ -57,9 +52,6 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
-            ['flag', 'default', 'value' => self::U_NORMAL],
-            ['flag', 'in', 'range' => [self::U_ADMIN, self::U_RESTAURANT, self::U_NORMAL]],
         ];
     }
 
@@ -137,27 +129,13 @@ class User extends ActiveRecord implements IdentityInterface
      * @inheritdoc
      */
     public function getAuthKey()
-    {   
+    {
         return $this->auth_key;
     }
 
     /**
      * @inheritdoc
      */
-    
-    public function findFlag()
-    {   
-        
-        $flaga=$app->user->identity->username;
-        return $this->$flaga;
-        
-     
-    }
-
-    /**
-     * @pobieranie flagi użytkownika
-     */
-    
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;

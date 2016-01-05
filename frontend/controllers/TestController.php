@@ -6,48 +6,12 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\User;
-use common\models\City;
 
 /**
  * Site controller
  */
 class TestController extends Controller
 {
-        public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['special'],
-                'rules' => [
-                    [
-                        'actions' => ['special'],
-                        'allow' => true,
-                        'matchCallback' => function ($rule, $action) {
-                            return date('d-m') === '04-01';
-                        }
-                    ],
-                ],
-            ],
-        ];
-    }
-    
-    public function actionSpecial()
-    {
-        return $this->render('index');
-    }
-    public function actionIndex()
-    {
-
- //  $tabela= Dish::findAll();
-
-  // echo tabela[0];
-// var_dump(City::find()->all()->);exit; 
-//var_dump(User::findIdentity(6)->flag);exit; 
-//$id = Yii::$app->user->is
-$iden = Yii::$app->user->identity;
-
-    }
     
     public function actionTestsession() {
         Yii::$app->session->set('zamowione',[
@@ -55,7 +19,7 @@ $iden = Yii::$app->user->identity;
             ['id' => 2, 'nazwa' => 'pierogi', 'cena'=>12,'ilosc' => 1]
             ]);
     }
-  
+    
     public function actionDodajdokoszyka($co, $ile)
     {
         $koszyk = Yii::$app->session->get('zamowione');
