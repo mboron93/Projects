@@ -1,55 +1,30 @@
 <?php
 
-/* @var $this yii\web\View */
-
-$this->title = 'My Yii Application';
 ?>
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Strona startowa -? (1)</h1>
-
-        <p class="lead">Wybór miasta, kategorię jedzienia, przepierowanie na wybór restauracji i przekierowanie na listę dań.
-            <br/>Główna ścieżka projektu to: <br/><br/>>(1)wybór miasta i potem kategoria jedzenia(pizza, kuchnia polska, kebab, sushi,itd.) i lista dostępnych restauracji.<br/><br/>>(2)wybór restauracji(sortowanie, otwarte/zamknięte, ocena, rodzaj płatności, godziny przyjowania zamówienia)<br/><br/>>(3)menu(spis jedzenia w kategoriach oraz sortowanie, info o restauracji -godzina adres, czas zamówienia,ocena 1-5)<br/><br/>>(4)koszyk(zapis, odczyt,koszt,kasowanie, zapis do bazy)<br/><br/>>(5)realizacja zamówienia(płatność,dane kontaktowe, adres, sposób dostawy>potwierdzenie zamówienia (potwierdzenie i wysłanie email'a).
-        </p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
+<h1>miasta</h1>
+  	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+                    <label for="sel1">Wybierz:</label>
+			<div class="btn-group">
+                              
+				<button class="btn btn-default">
+					Miasto
+				</button> 
+				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+                                      <?php 
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<li><a href="/city/miasto?id='.$query[$i]['id_miasta'].'">'.$query[$i]['miasto'].'</a></li>';
+                                      }
+                                      ?>
+				</ul>
+			</div> 
+		</div>
+	</div>
 </div>
+
+

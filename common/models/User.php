@@ -25,10 +25,24 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
-
+ //define the number of levels that you need
+ const LEVEL_REGISTERED=0, LEVEL_AUTHOR=1, LEVEL_ADMIN=6, LEVEL_SUPERADMIN=99;
     /**
      * @inheritdoc
      */
+    
+    static function getAccessLevelList( $level = null ){
+      $levelList=array(
+       self::LEVEL_REGISTERED => 'Registered',
+       self::LEVEL_AUTHOR => 'Author',
+       self::LEVEL_ADMIN => 'Administrator'
+      );
+      if( $level === null)
+       return $levelList;
+      return $levelList[ $level ];
+     }
+    
+    
     public static function tableName()
     {
         return '{{%user}}';

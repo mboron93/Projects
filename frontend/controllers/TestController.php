@@ -12,6 +12,11 @@ use common\models\User;
  */
 class TestController extends Controller
 {
+        
+    public function actionIndex() {
+       var_dump(User::getAccessLevelList());
+        
+    }
     
     public function actionTestsession() {
         Yii::$app->session->set('zamowione',[

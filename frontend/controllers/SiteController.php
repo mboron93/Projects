@@ -12,6 +12,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\City;
 
 /**
  * Site controller
@@ -70,9 +71,22 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex()
+     public function actionIndex()
     {
-        return $this->render('index');
+
+     $query = City::find()->all();
+     
+
+        return $this->render('index',[
+            'query'=>$query,
+        ]);
+        
+    }
+    
+        
+    public function actionPlan()
+    {
+        return $this->render('plan_projektu');
     }
 
     /**
