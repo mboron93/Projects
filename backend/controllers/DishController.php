@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Dish;
-use backend\models\DishSearch;
+use backend\models\DishSerach;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -20,7 +20,7 @@ class DishController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['post'],
                 ],
             ],
         ];
@@ -32,7 +32,7 @@ class DishController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new DishSearch();
+        $searchModel = new DishSerach();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

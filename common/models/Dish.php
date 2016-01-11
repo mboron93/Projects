@@ -9,7 +9,8 @@ use Yii;
  *
  * @property integer $id_dania
  * @property string $nazwa_dania
- * @property integer $koszt_dania
+ * @property string $opis
+ * @property double $koszt_dania
  * @property integer $id_restauracji
  *
  * @property Restaurant $idRestauracji
@@ -31,10 +32,11 @@ class Dish extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nazwa_dania', 'koszt_dania', 'id_restauracji'], 'required'],
-            [['koszt_dania', 'id_restauracji'], 'integer'],
-            [['nazwa_dania'], 'string', 'max' => 30],
-            [['id_restauracji'], 'exist', 'skipOnError' => true, 'targetClass' => Restaurant::className(), 'targetAttribute' => ['id_restauracji' => 'id_restauracji']],
+            [['nazwa_dania', 'opis', 'koszt_dania', 'id_restauracji'], 'required'],
+            [['opis'], 'string'],
+            [['koszt_dania'], 'number'],
+            [['id_restauracji'], 'integer'],
+            [['nazwa_dania'], 'string', 'max' => 30]
         ];
     }
 
@@ -46,6 +48,7 @@ class Dish extends \yii\db\ActiveRecord
         return [
             'id_dania' => 'Id Dania',
             'nazwa_dania' => 'Nazwa Dania',
+            'opis' => 'Opis',
             'koszt_dania' => 'Koszt Dania',
             'id_restauracji' => 'Id Restauracji',
         ];
@@ -65,14 +68,5 @@ class Dish extends \yii\db\ActiveRecord
     public function getOrders()
     {
         return $this->hasMany(Order::className(), ['id_dania' => 'id_dania']);
-    }
-
-    /**
-     * @inheritdoc
-     * @return \backend\models\DishQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new \backend\models\DishQuery(get_called_class());
     }
 }

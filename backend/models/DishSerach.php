@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use common\models\Dish;
 
 /**
- * DishSearch represents the model behind the search form about `common\models\Dish`.
+ * DishSerach represents the model behind the search form about `common\models\Dish`.
  */
-class DishSearch extends Dish
+class DishSerach extends Dish
 {
     /**
      * @inheritdoc
@@ -18,8 +18,9 @@ class DishSearch extends Dish
     public function rules()
     {
         return [
-            [['id_dania', 'koszt_dania', 'id_restauracji'], 'integer'],
-            [['nazwa_dania'], 'safe'],
+            [['id_dania', 'id_restauracji'], 'integer'],
+            [['nazwa_dania', 'opis'], 'safe'],
+            [['koszt_dania'], 'number'],
         ];
     }
 
@@ -43,8 +44,6 @@ class DishSearch extends Dish
     {
         $query = Dish::find();
 
-        // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -57,14 +56,14 @@ class DishSearch extends Dish
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'id_dania' => $this->id_dania,
             'koszt_dania' => $this->koszt_dania,
             'id_restauracji' => $this->id_restauracji,
         ]);
 
-        $query->andFilterWhere(['like', 'nazwa_dania', $this->nazwa_dania]);
+        $query->andFilterWhere(['like', 'nazwa_dania', $this->nazwa_dania])
+            ->andFilterWhere(['like', 'opis', $this->opis]);
 
         return $dataProvider;
     }

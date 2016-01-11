@@ -14,6 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nazwa_dania')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'opis')->textarea(['rows' => 6]) ?>
+
     <?= $form->field($model, 'koszt_dania')->textInput() ?>
 
     <?= $form->field($model, 'id_restauracji')->textInput() ?>
