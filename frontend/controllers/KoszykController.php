@@ -23,6 +23,15 @@ class KoszykController extends \yii\web\Controller
            //id //nazwa //porcja // ilosc //cena
     
     }
+    
+    public function actionAdd()//wyświetlanie
+    {
+    echo "Id";
+        
+             //brak danych
+           //id //nazwa //porcja // ilosc //cena
+    
+    }
    
          public function actionEntry()
     {   
