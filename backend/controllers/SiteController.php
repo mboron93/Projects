@@ -27,7 +27,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index','pomoc'],
                         'allow' => true,
                         'roles' => ['@'],//tylko zalogowani
                         
@@ -60,6 +60,11 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+     public function actionPomoc()
+    {
+        return $this->render('pomoc');
+    }
+    
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {

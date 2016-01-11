@@ -24,7 +24,7 @@ $this->title = 'My Yii Application';
 					</h4>
 				</div>
 				<div class="list-group-item">
-   <!--trzeba zrobić prawidłowe odwołanie do site pomoc.php-->    <a href=#pomoc.php>Help</a><span class="badge">?</span>
+   <!--trzeba zrobić prawidłowe odwołanie do site pomoc.php-->    <a href="site/pomoc">Help</a><span class="badge">?</span>
 				</div>
 			</div>
 		</div>
