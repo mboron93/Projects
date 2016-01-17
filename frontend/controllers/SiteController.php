@@ -83,7 +83,18 @@ class SiteController extends Controller
         
     }
     
+       public function actionRestaurant($id)
+    {
+
+     $query = \common\models\Restaurant::find()->where(['id_miasta' => $id])->all();
+ 
+        return $this->render('restaurant',[
+            'query'=>$query,
+        ]);
         
+    } 
+
+    
     public function actionPlan()
     {
         return $this->render('plan_projektu');
