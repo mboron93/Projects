@@ -6,13 +6,36 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\User;
+use app\models\TestForm;
 
 /**
  * Site controller
  */
 class TestController extends Controller
 {
-        
+    
+     public function actionForm()
+    {
+     echo 'FORMMMMM';
+     return $this->render('index');
+    }
+    
+    public function actionEntry()
+    {   
+        $model = new TestForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            // valid data received in $model
+
+            // do something meaningful here about $model ...
+
+            return $this->render('test_1', ['model' => $model]);
+        } else {
+            // either the page is initially displayed or there is some validation error
+            return $this->render('test_1', ['model' => $model]);
+        }
+    }
+    
     public function actionIndex() {
        var_dump(User::getAccessLevelList());
         

@@ -30,7 +30,12 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * @inheritdoc
      */
-    
+    const ROLE_ADMIN = 20;
+public function getIsAdmin()
+{
+    return $this->role == self::ROLE_ADMIN;
+}
+
     static function getAccessLevelList( $level = null ){
       $levelList=array(
        self::LEVEL_REGISTERED => 'Registered',

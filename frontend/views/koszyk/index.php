@@ -34,8 +34,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-
-if(isset($settings)){
+if(isset($settings)&&!empty($settings)){
     
 foreach ($settings as $index) {
     echo '<tr>'
@@ -57,6 +56,11 @@ else {
             <a href="/koszyk/wyslij">
             	<button type="button" class="btn btn-primary">
 		ZREALIZUJ
+		</button>
+            </a>
+            <a href="/koszyk/clean">
+            	<button type="button" class="btn btn-default">
+		OPRÓŻNIJ
 		</button>
             </a>
 	</div>

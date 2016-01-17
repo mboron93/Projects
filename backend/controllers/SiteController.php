@@ -27,10 +27,9 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index','pomoc'],
+                        'actions' => ['logout', 'index','pomoc','create'],
                         'allow' => true,
                         'roles' => ['@'],//tylko zalogowani
-                        
                     ],
                 ],
             ],
@@ -53,6 +52,23 @@ class SiteController extends Controller
                 'class' => 'yii\web\ErrorAction',
             ],
         ];
+    }
+    
+    public function actionCreate()
+    {
+        $model = new Status();
+ 
+        if ($model->load(Yii::$app->request->post())) {
+          $model->created_by = Yii::$app->user->getId();
+          $model->created_at = time();
+          $model->updated_at = time();
+           if ($model->save()) {             
+             return $this->redirect(['view', 'id' => $model->id]);             
+           } 
+        } 
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     public function actionIndex()
