@@ -1,6 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 ?>
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -13,12 +14,30 @@
 					<tr>
 						<th>
 							Nazwa
+                                                        <?php 
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<li>'.' '.$query[$i]['nazwa_dania'].'</li>';
+                                      }
+                                      ?>
 						</th>
 						<th>
 							Składniki
+                                                       <?php 
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<li>'.' '.$query[$i]['opis'].'</li>';
+                                      } 
+                                      ?>
 						</th>
 						<th>
 							Cena
+                                                        <?php 
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<li>'.' '.$query[$i]['koszt_dania'].'</li>';
+                                      }
+                                      ?>
 						</th>
 						<th>
 							Ocena
@@ -235,7 +254,13 @@
 					</tr>
 				</thead>
 			</table>
+            <a href="/koszyk">
+            	<button type="button" class="btn btn-primary">
+		Do koszyka
+		</button>
+            </a>
 		</div>
 	</div>
 </div>
+
 

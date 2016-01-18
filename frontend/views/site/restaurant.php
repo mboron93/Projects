@@ -18,7 +18,7 @@
                                  
                                       $result = count($query);
                                       for($i=0; $i<$result ;$i++){
-                                   echo  '<li><a href=" ">'.$query[$i]['nazwa'].'</a></li>';
+                                   echo  '<li><a href="/dish/index?id='.$query[$i]['id_restauracji'].'">'.$query[$i]['nazwa'].'</a></li>';
                                       }
                                       ?>
 				</ul>
