@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Order */
 
-$this->title = $model->id_zamowienia;
+$this->title = $model->id_order;
 $this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id_zamowienia' => $model->id_zamowienia, 'id_usera' => $model->id_usera, 'id_dania' => $model->id_dania], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id_zamowienia' => $model->id_zamowienia, 'id_usera' => $model->id_usera, 'id_dania' => $model->id_dania], [
+        <?= Html::a('Update', ['update', 'id_order' => $model->id_order, 'id_usera' => $model->id_usera], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id_order' => $model->id_order, 'id_usera' => $model->id_usera], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -28,12 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id_zamowienia',
+            'id_order',
             'id_usera',
-            'id_dania',
-            'porcja',
-            'ilosc',
-            'cena',
+            'wartosc',
+            'data',
         ],
     ]) ?>
 

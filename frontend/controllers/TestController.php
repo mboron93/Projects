@@ -6,6 +6,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\User;
+use common\models\City;
 use app\models\TestForm;
 
 /**
@@ -14,12 +15,17 @@ use app\models\TestForm;
 class TestController extends Controller
 {
     
-     public function actionForm()
+     public function actionForm2()
     {
      echo 'FORMMMMM';
      return $this->render('index');
     }
-    
+    public function actionCity()
+    {
+    $post=new City;
+$post->miasto='Rumia';
+$post->save();
+    }
     public function actionEntry()
     {   
         $model = new TestForm();

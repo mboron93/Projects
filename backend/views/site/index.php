@@ -22,6 +22,9 @@ $this->title = 'My Yii Application';
                                         <h4 class="list-group-item">
                                             <a href="/order">Dodaj / Usuń Zamówienie</a><span class="badge">+/-</span>
 					</h4>
+                                        <h4 class="list-group-item">
+                                            <a href="/detail">Dodaj / Usuń Szczegóły zamówienia</a><span class="badge">+/-</span>
+					</h4>
 				</div>
 				<div class="list-group-item">
    <!--trzeba zrobić prawidłowe odwołanie do site pomoc.php-->    <a href="site/pomoc">Help</a><span class="badge">?</span>

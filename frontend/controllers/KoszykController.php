@@ -8,6 +8,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\User;
 use common\models\Order;
+use common\models\Detail;
 
 use common\models\Dish;
 
@@ -85,16 +86,50 @@ class KoszykController extends \yii\web\Controller
      public function actionWyslij()
     {
          //sprwadzenie czy zalogowany -> z zalogowania sporotem do wyślij
-        if(Yii::$app->user->isGuest){$this->redirect('/site/login')->redirect('/koszyk/wyslij');}
-         //wysłanie do bazy
-     $koszyk = Yii::$app->session->get('zamowione');
-     $zapisz=1;
-     if($zapisz){
-      \Yii::$app->getSession()->setFlash('success', 'Zamówienie Twoje zostało wysłane :)');
-     }else{
-      \Yii::$app->getSession()->setFlash('warning', 'Zamówienie nie wysłane :/');
+        if(Yii::$app->user->isGuest)
+            {   
+            $this->redirect('/site/login');
+            }
+        else{
+            //wysłanie do bazy
+     $koszyk = Yii::$app->session->get('zamowione'); 
+     //suma produktów
+     $suma=0;
+     foreach ($koszyk as $l) {
+       $suma += $l['cena'];
      }
-    // return $this->goBack('index');
+  
+     //ustawienie zamówienia
+        $order = new Order;
+        $order->id_usera = (Yii::$app->user->identity->id);
+        
+        $order->wartosc = $suma;
+        $value=date('Y-d-m h:i:s');
+        $order->data = (Yii::$app->formatter->asTimestamp($value));
+        $order->save();
+         $id =  $order->id_order;
+       
+    // zapis produktów do bazy z powiązaniem id zamówienia
+      
+       foreach ($koszyk as $key => $pozycja) {
+           $detail = new Detail;
+           $detail->id_order= $id;
+           $detail->id_dania= $pozycja['id'];
+           $detail->porcja= $pozycja['porcja'];
+           $detail->ilosc= $pozycja['ilosc'];
+           $detail->cena= $pozycja['cena'];
+           $detail->save();
+       }
+       \Yii::$app->getSession()->setFlash('success', 'Zamówienie Twoje zostało wysłane :)'); 
+       
+       return $this->redirect('clean');
+    # $zapisz=1;
+    # if($zapisz){
+    #  \Yii::$app->getSession()->setFlash('success', 'Zamówienie Twoje zostało wysłane :)');
+    # }else{
+    #  \Yii::$app->getSession()->setFlash('warning', 'Zamówienie nie wysłane :/');
+     }
+  
+  
+     }
     }
-
-}

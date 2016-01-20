@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Order;
+use common\models\Detail;
 
 /**
- * OrderSearch represents the model behind the search form about `common\models\Order`.
+ * DetailSearch represents the model behind the search form about `common\models\Detail`.
  */
-class OrderSearch extends Order
+class DetailSearch extends Detail
 {
     /**
      * @inheritdoc
@@ -18,9 +18,9 @@ class OrderSearch extends Order
     public function rules()
     {
         return [
-            [['id_order', 'id_usera'], 'integer'],
-            [['wartosc'], 'number'],
-            [['data'], 'safe'],
+            [['id_or_detail', 'id_order', 'id_dania', 'ilosc'], 'integer'],
+            [['porcja'], 'safe'],
+            [['cena'], 'number'],
         ];
     }
 
@@ -42,7 +42,7 @@ class OrderSearch extends Order
      */
     public function search($params)
     {
-        $query = Order::find();
+        $query = Detail::find();
 
         // add conditions that should always apply here
 
@@ -60,12 +60,14 @@ class OrderSearch extends Order
 
         // grid filtering conditions
         $query->andFilterWhere([
+            'id_or_detail' => $this->id_or_detail,
             'id_order' => $this->id_order,
-            'id_usera' => $this->id_usera,
-            'wartosc' => $this->wartosc,
+            'id_dania' => $this->id_dania,
+            'ilosc' => $this->ilosc,
+            'cena' => $this->cena,
         ]);
 
-        $query->andFilterWhere(['like', 'data', $this->data]);
+        $query->andFilterWhere(['like', 'porcja', $this->porcja]);
 
         return $dataProvider;
     }

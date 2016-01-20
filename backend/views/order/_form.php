@@ -14,13 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_usera')->textInput() ?>
 
-    <?= $form->field($model, 'id_dania')->textInput() ?>
+    <?= $form->field($model, 'wartosc')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'porcja')->textInput() ?>
-
-    <?= $form->field($model, 'ilosc')->textInput() ?>
-
-    <?= $form->field($model, 'cena')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'data')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Order;
-use backend\models\OrderSearch;
+use common\models\Detail;
+use backend\models\DetailSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OrderController implements the CRUD actions for Order model.
+ * DetailController implements the CRUD actions for Detail model.
  */
-class OrderController extends Controller
+class DetailController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class OrderController extends Controller
     }
 
     /**
-     * Lists all Order models.
+     * Lists all Detail models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OrderSearch();
+        $searchModel = new DetailSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,29 +45,29 @@ class OrderController extends Controller
     }
 
     /**
-     * Displays a single Order model.
-     * @param integer $id_order
-     * @param integer $id_usera
+     * Displays a single Detail model.
+     * @param integer $id_or_detail
+     * @param integer $id_dania
      * @return mixed
      */
-    public function actionView($id_order, $id_usera)
+    public function actionView($id_or_detail, $id_dania)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id_order, $id_usera),
+            'model' => $this->findModel($id_or_detail, $id_dania),
         ]);
     }
 
     /**
-     * Creates a new Order model.
+     * Creates a new Detail model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Order();
+        $model = new Detail();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_order' => $model->id_order, 'id_usera' => $model->id_usera]);
+            return $this->redirect(['view', 'id_or_detail' => $model->id_or_detail, 'id_dania' => $model->id_dania]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -76,18 +76,18 @@ class OrderController extends Controller
     }
 
     /**
-     * Updates an existing Order model.
+     * Updates an existing Detail model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id_order
-     * @param integer $id_usera
+     * @param integer $id_or_detail
+     * @param integer $id_dania
      * @return mixed
      */
-    public function actionUpdate($id_order, $id_usera)
+    public function actionUpdate($id_or_detail, $id_dania)
     {
-        $model = $this->findModel($id_order, $id_usera);
+        $model = $this->findModel($id_or_detail, $id_dania);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_order' => $model->id_order, 'id_usera' => $model->id_usera]);
+            return $this->redirect(['view', 'id_or_detail' => $model->id_or_detail, 'id_dania' => $model->id_dania]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -96,30 +96,30 @@ class OrderController extends Controller
     }
 
     /**
-     * Deletes an existing Order model.
+     * Deletes an existing Detail model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id_order
-     * @param integer $id_usera
+     * @param integer $id_or_detail
+     * @param integer $id_dania
      * @return mixed
      */
-    public function actionDelete($id_order, $id_usera)
+    public function actionDelete($id_or_detail, $id_dania)
     {
-        $this->findModel($id_order, $id_usera)->delete();
+        $this->findModel($id_or_detail, $id_dania)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Order model based on its primary key value.
+     * Finds the Detail model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id_order
-     * @param integer $id_usera
-     * @return Order the loaded model
+     * @param integer $id_or_detail
+     * @param integer $id_dania
+     * @return Detail the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id_order, $id_usera)
+    protected function findModel($id_or_detail, $id_dania)
     {
-        if (($model = Order::findOne(['id_order' => $id_order, 'id_usera' => $id_usera])) !== null) {
+        if (($model = Detail::findOne(['id_or_detail' => $id_or_detail, 'id_dania' => $id_dania])) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

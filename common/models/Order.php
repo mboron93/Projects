@@ -7,15 +7,13 @@ use Yii;
 /**
  * This is the model class for table "order".
  *
- * @property integer $id_zamowienia
+ * @property integer $id_order
  * @property integer $id_usera
- * @property integer $id_dania
- * @property integer $porcja
- * @property integer $ilosc
- * @property string $cena
+ * @property string $wartosc
+ * @property string $data
  *
  * @property User $idUsera
- * @property Dish $idDania
+ * @property OrderDetail[] $orderDetails
  */
 class Order extends \yii\db\ActiveRecord
 {
@@ -33,11 +31,11 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_usera', 'id_dania', 'porcja', 'ilosc', 'cena'], 'required'],
-            [['id_usera', 'id_dania', 'porcja', 'ilosc'], 'integer'],
-            [['cena'], 'number'],
+            [['id_usera', 'wartosc', 'data'], 'required'],
+            [['id_usera'], 'integer'],
+            [['wartosc'], 'number'],
+            [['data'], 'string', 'max' => 10],
             [['id_usera'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_usera' => 'id']],
-            [['id_dania'], 'exist', 'skipOnError' => true, 'targetClass' => Dish::className(), 'targetAttribute' => ['id_dania' => 'id_dania']],
         ];
     }
 
@@ -47,12 +45,10 @@ class Order extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_zamowienia' => 'Id Zamowienia',
+            'id_order' => 'Id Order',
             'id_usera' => 'Id Usera',
-            'id_dania' => 'Id Dania',
-            'porcja' => 'Porcja',
-            'ilosc' => 'Ilosc',
-            'cena' => 'Cena',
+            'wartosc' => 'Wartosc',
+            'data' => 'Data',
         ];
     }
 
@@ -67,9 +63,9 @@ class Order extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdDania()
+    public function getOrderDetails()
     {
-        return $this->hasOne(Dish::className(), ['id_dania' => 'id_dania']);
+        return $this->hasMany(OrderDetail::className(), ['id_order' => 'id_order']);
     }
 
     /**
