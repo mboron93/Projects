@@ -1,6 +1,3 @@
-<?php
-
-?>
 <h1>miasta</h1>
   	<div class="container-fluid">
 	<div class="row">

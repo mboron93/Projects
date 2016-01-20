@@ -19,11 +19,21 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+       # 'css/style.css',
+       #'css/animate.css',
+       # 'css/style-responsive.css',
+       # '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
     ];
     public $js = [
+        'js/jquery.countdown.min.js',
+        'js/jquery.smooth-scroll.js',
+        'js/wow.min.js',
+        'js/jquery.nicescroll.min.js',    
+        'js/script.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
 }

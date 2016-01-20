@@ -17,7 +17,7 @@
                                                         <?php 
                                       $result = count($query);
                                       for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['nazwa_dania'].'</li>';
+                                   echo  '<li><a href="../koszyk/add?id='.$query[$i]['id_dania'].'" >'.' '.$query[$i]['nazwa_dania'].'</a></li>';
                                       }
                                       ?>
 						</th>
