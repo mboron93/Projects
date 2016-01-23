@@ -26,7 +26,7 @@
                                                        <?php 
                                       $result = count($query);
                                       for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['opis'].'</li>';
+                                   echo  '<li>'.' '.$query[$i]['nazwa_dania'].'</li>';
                                       } 
                                       ?>
 						</th>
