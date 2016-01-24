@@ -1,6 +1,7 @@
 <?php
 
 namespace common\models;
+use common\models\User;
 
 use Yii;
 
@@ -75,5 +76,22 @@ class Order extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \backend\models\OrderQuery(get_called_class());
+    }
+    
+        public static function email()
+    {
+
+        $email=Yii::$app->user->identity->email;
+            if ($email) {
+        return 
+                Yii:: $app ->mailer->compose( 'zam-html')
+                //  Yii::$app->mailer->compose(['html' => 'zam-html', 'logo' => Yii::getAlias('@app/web/images/logo.png')])
+                ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' robot'])
+                ->setTo($email)
+                ->setSubject('Potwierdzenie otrzymania zamówienia.')
+                ->send();  
+                    }     
+else
+        return false;
     }
 }

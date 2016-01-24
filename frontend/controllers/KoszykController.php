@@ -120,9 +120,14 @@ class KoszykController extends \yii\web\Controller
            $detail->cena= $pozycja['cena'];
            $detail->save();
        }
-       \Yii::$app->getSession()->setFlash('success', 'Zamówienie Twoje zostało wysłane :)'); 
-       
-       return $this->redirect('clean');
+       $model = new Order();
+if ($model->email()) {
+                Yii::$app->session->setFlash('success', 'Przyjeliśmy twoje zamówienie. Na twoją pocztę przesłaliśmy potwierdzenie. ');
+
+                return $this->redirect('clean');
+            } else {
+                Yii::$app->session->setFlash('error', 'Coś poszło nie tak, sróbuj ponownie.');
+            }
     # $zapisz=1;
     # if($zapisz){
     #  \Yii::$app->getSession()->setFlash('success', 'Zamówienie Twoje zostało wysłane :)');
@@ -132,4 +137,4 @@ class KoszykController extends \yii\web\Controller
   
   
      }
-    }
+}

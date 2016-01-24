@@ -18,8 +18,10 @@ class TestController extends Controller
      public function actionForm2()
     {
      echo 'FORMMMMM';
-     return $this->render('index');
+     $usr=  User::find();
+          echo Yii::$app->user->identity->email;
     }
+             
     public function actionCity()
     {
     $post=new City;
