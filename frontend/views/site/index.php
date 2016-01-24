@@ -2,6 +2,7 @@
   	<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
+                    
                     <label for="sel1">Wybierz miasto waćpanie:</label>
 			<div class="btn-group">
                               
@@ -20,9 +21,10 @@
                                       }
                                       ?>
 				</ul>
+                           
 			</div> 
 		</div>
 	</div>
 </div>
-
-
+</div>
+</header>
