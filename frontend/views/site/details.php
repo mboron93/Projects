@@ -18,17 +18,6 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>
-                                                     
-							id_zamówienia
-                                                        <?php                                                       
-                                  
-                                                       $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['id_order'].'</li>';
-                                  }
-                                      ?>
-						</th>
                                                 <th>
                                                      
 							nazwa_dania
@@ -36,7 +25,11 @@
                                  
                                                        $result = count($query);
                                       for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query1[$i]['nazwa_dania'].'</li>';
+                                       
+                                          $x=$query[$i]['id_dania']-3;
+                                          
+                                        
+                                   echo  '<li>'.' '.$query1[$x]['nazwa_dania'].'</li>';
                                   }
                                       ?>
 						</th>
