@@ -162,8 +162,23 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionAbout()
-    {
-        return $this->render('about');
+    {   
+        $userid=Yii::$app->user->getId();
+         $query = \common\models\Order::find()->where(['id_usera' => $userid])->all();
+         $queryy = \common\models\order_detail::find()->all();
+        $result = count($queryy);
+        $query1 = [];
+         for($i=0; $i<$result ;$i++){
+           $query1[] = \common\models\order_detail::find()->joinWith([$query, true, 'INNER JOIN'])->all();
+         }
+         
+         var_dump($query);
+          var_dump($query1);
+               
+        return $this->render('about', [
+                'query' => $query,
+                'query1' => $query1,
+            ]);
     }
 
     /**
