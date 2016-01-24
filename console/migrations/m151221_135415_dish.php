@@ -11,6 +11,7 @@ class m151221_135415_dish extends Migration
  `nazwa_dania` varchar(30) NOT NULL,
  `koszt_dania` int(11) NOT NULL,
  `id_restauracji` int(11) NOT NULL,
+  `rodzaj` text(55) NOT NULL,
  PRIMARY KEY (`id_dania`,`id_restauracji`),
  KEY `id_restauracji` (`id_restauracji`),
  CONSTRAINT `dania_restauracji_ibfk_1` FOREIGN KEY (`id_restauracji`) REFERENCES `restaurant` (`id_restauracji`) ON DELETE NO ACTION ON UPDATE NO ACTION
