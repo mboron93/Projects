@@ -165,22 +165,23 @@ class SiteController extends Controller
     {   
         $userid=Yii::$app->user->getId();
          $query = \common\models\Order::find()->where(['id_usera' => $userid])->all();
-         $queryy = \common\models\order_detail::find()->all();
-        $result = count($queryy);
-        $query1 = [];
-         for($i=0; $i<$result ;$i++){
-           $query1[] = \common\models\order_detail::find()->joinWith([$query, true, 'INNER JOIN'])->all();
-         }
-         
-         var_dump($query);
-          var_dump($query1);
+       
                
         return $this->render('about', [
-                'query' => $query,
+                'query' => $query,     
+            ]);
+    }
+public function actionDetails($id)
+    {  
+         $query = \common\models\order_detail::find()->where(['id_order' => $id])->all();
+         $query1 = \common\models\Dish::find()->all();
+               
+        return $this->render('details', [
+                'query' => $query,   
                 'query1' => $query1,
             ]);
     }
-
+   
     /**
      * Signs user up.
      *
