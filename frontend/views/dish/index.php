@@ -1,7 +1,9 @@
 <?php
 /* @var $this yii\web\View */
-?>
 
+$this->title = 'MENU';
+$this->params['breadcrumbs'][] = $this->title;
+?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">

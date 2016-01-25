@@ -1,5 +1,8 @@
 <?php
 /* @var $this yii\web\View */
+
+$this->title = 'TWÓJ KOSZYK';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1>Twój Koszyk</h1>
 <div class="container-fluid">

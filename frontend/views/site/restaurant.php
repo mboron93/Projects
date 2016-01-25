@@ -1,4 +1,8 @@
 <?php
+/* @var $this yii\web\View */
+
+$this->title = 'RESTAURACJE';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1>restauracje</h1>
   	<div class="container-fluid">
