@@ -6,8 +6,7 @@ class m160306_175527_danerestauracji extends Migration
 {
     public function up()
     {
-              $this->execute("  ALTER TABLE  `restaurant` ADD  `telefon` INT( 11 ) NOT NULL ,
-ADD  `e-mail` VARCHAR( 55 ) NOT NULL ;");
+              $this->execute("  ALTER TABLE  `restaurant` ADD  `telefon` INT( 11 ) NOT NULL , ADD  `e-mail` VARCHAR( 55 ) NOT NULL ;");
 
     }
 
