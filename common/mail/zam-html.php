@@ -201,19 +201,29 @@ $message = Yii::$app->mailer->compose();
     </td>
   </tr>
 </tbody></table>
-<table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+<table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" cellpadding="0" cellspacing="0" width="100%">
     <tbody><tr style="vertical-align: top">
-        <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px" align="center">
-            <div style="height: 10px;">
-                <table style="border-spacing: 0;border-collapse: collapse;vertical-align: top;border-top: 10px solid transparent;width: 100%" align="center" border="0" cellspacing="0">
-                    <tbody><tr style="vertical-align: top">
-                        <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top" align="center"></td>
-                    </tr>
-                </tbody></table>
-            </div>
-        </td>
+        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 16px;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif"><div class="our-class">
+<table border="1" width="100%" style="color:white">
+    <tbody><tr>
+      <td>Produkt</td><td>Porcja</td>
+      <td>Ilość</td><td>Cena</td></tr>
+    <tr>
+      <?php foreach ($zamow as $index) {
+    echo '<tr>'
+            . '<td>'.$index['nazwa'].'</td>'
+            . '<td>'.$index['porcja'].'</td>'
+            . '<td>'.$index['ilosc'].'szt </td>'
+            . '<td>'.$index['cena'].'zł </td>';
+            }?>
+   </tr>
+ </tbody></table>
+</div>
+</td>
     </tr>
-</tbody></table><table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" cellpadding="0" cellspacing="0" width="100%">
+</tbody></table>
+
+<table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" cellpadding="0" cellspacing="0" width="100%">
   <tbody><tr style="vertical-align: top">
     <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px">
         <div style="color:#E8A05D;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">            

@@ -80,16 +80,16 @@ class Order extends \yii\db\ActiveRecord
     
         public static function email()
     {
-
+            $zamow= Yii::$app->session->get('zamowione'); 
         $email=Yii::$app->user->identity->email;
             if ($email) {
         return 
-                Yii:: $app ->mailer->compose( 'zam-html')
-                //  Yii::$app->mailer->compose(['html' => 'zam-html', 'logo' => Yii::getAlias('@app/web/images/logo.png')])
-                ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' robot'])
-                ->setTo($email)
-                ->setSubject('Potwierdzenie otrzymania zamówienia.')
-                ->send();  
+            Yii:: $app ->mailer->compose('zam-html',['zamow' => $zamow])
+            //  Yii::$app->mailer->compose(['html' => 'zam-html', 'logo' => Yii::getAlias('@app/web/images/logo.png')])
+            ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' robot'])
+            ->setTo($email)
+            ->setSubject('Potwierdzenie otrzymania zamówienia.')
+            ->send();  
                     }     
 else
         return false;
