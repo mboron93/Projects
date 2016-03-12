@@ -16,6 +16,24 @@ use common\models\Dish;
 class KoszykController extends \yii\web\Controller
 {
     
+        public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['wyslij'],
+                'rules' => [
+                    [
+                        'actions' => ['wyslij'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    
          public function actionIndex()//wyświetlanie
     {
         $koszyk = Yii::$app->session->get('zamowione');
@@ -61,7 +79,7 @@ class KoszykController extends \yii\web\Controller
           $koszyk=[];
           Yii::$app->session->set('zamowione',$koszyk);
            
-          return $this->goBack('index');
+          return $this->render('index');
     }
     
     public function actionUsun($id)
@@ -79,18 +97,13 @@ class KoszykController extends \yii\web\Controller
           Yii::$app->session->set('zamowione',$nowykoszyk);
          \Yii::$app->getSession()->setFlash('success', 'Usunęto pozycję: '.$id);
         }
-        return $this->goBack('index');
+        return $this->render('index');
 
     }  
     
      public function actionWyslij()
     {
-         //sprwadzenie czy zalogowany -> z zalogowania sporotem do wyślij
-        if(Yii::$app->user->isGuest)
-            {   
-            $this->redirect('/site/login');
-            }
-        else{
+
             //wysłanie do bazy
      $koszyk = Yii::$app->session->get('zamowione'); 
      //suma produktów
@@ -123,7 +136,6 @@ class KoszykController extends \yii\web\Controller
        $model = new Order();
 if ($model->email()) {
                 Yii::$app->session->setFlash('success', 'Przyjeliśmy twoje zamówienie. Na twoją pocztę przesłaliśmy potwierdzenie. ');
-
                 return $this->redirect('clean');
             } else {
                 Yii::$app->session->setFlash('error', 'Coś poszło nie tak, sróbuj ponownie.');
@@ -133,8 +145,5 @@ if ($model->email()) {
     #  \Yii::$app->getSession()->setFlash('success', 'Zamówienie Twoje zostało wysłane :)');
     # }else{
     #  \Yii::$app->getSession()->setFlash('warning', 'Zamówienie nie wysłane :/');
-     }
-  
-  
      }
 }
