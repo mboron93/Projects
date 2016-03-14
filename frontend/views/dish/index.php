@@ -7,63 +7,65 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<h1>
-				Menu
-			</h1>
-			
-			<table class="table">
+			<table class="table table-bordered table-condensed" id="tabela" >
 				<thead>
 					<tr>
 						<th>
-                                                     
 							Nazwa
-                                                        <?php                                                       
-                                  
-                                                       $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<li><a href="../koszyk/add?id='.$query[$i]['id_dania'].'" >'.' '.$query[$i]['nazwa_dania'].'</a></li>';
-                                  }
-                                      ?>
 						</th>
-                                                <th>
-                                                     
+						<th>
 							rodzaj
-                                                        <?php                                                       
-                                 
-                                                       $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['rodzaj'].'</a></li>';
-                                  }
-                                      ?>
 						</th>
 						<th>
 							Składniki
-                                                       <?php 
-                                                      
-                                      $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['nazwa_dania'].'</li>';
-                                                       } 
-                                      ?>
 						</th>
 						<th>
 							Cena
-                                                        <?php 
-                                                       
-                                      $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['koszt_dania'].'</li>';
-                                  }
-                                      ?>
-						</th>
-						<th>
-							Ocena
 						</th>
 					</tr>
 				</thead>
+				<tbody>
+					<tr>
+						<td>
+							   <?php                                                       
+                                  
+                                                       $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<p><a href="../koszyk/add?id='.$query[$i]['id_dania'].'" >'.' '.$query[$i]['nazwa_dania'].'</a></p>';
+                                  }
+                                      ?>
+						</td>
+						<td>
+							 <?php                                                       
+                                 
+                                                       $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<p>'.' '.$query[$i]['rodzaj'].'</a></p>';
+                                  }
+                                      ?>
+						</td>
+						<td>
+							<?php 
+                                                      
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<p>'.' '.$query[$i]['opis'].'</p>';
+                                                       } 
+                                      ?>
+						</td>
+						<td>
+							<?php 
+                                                       
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<p>'.' '.$query[$i]['koszt_dania'].'<p>';
+                                  }
+                                      ?>
+						</td>
+					</tr>
+				</tbody>
 			</table>
-
-            <a href="/koszyk">
+			<a href="/koszyk">
             	<button type="button" class="btn btn-primary">
 		Do koszyka
 		</button>
@@ -71,5 +73,4 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 	</div>
 </div>
-
 
