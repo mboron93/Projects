@@ -124,6 +124,8 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `id_restauracji` int(11) NOT NULL AUTO_INCREMENT,
   `nazwa` varchar(50) NOT NULL,
   `id_miasta` int(30) NOT NULL,
+  `telefon` INT(11),
+  `e-mail` VARCHAR(55),
   PRIMARY KEY (`id_restauracji`,`id_miasta`),
   KEY `id_miasta` (`id_miasta`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
@@ -137,19 +139,19 @@ TRUNCATE TABLE `restaurant`;
 -- Zrzut danych tabeli `restaurant`
 --
 
-INSERT INTO `restaurant` (`id_restauracji`, `nazwa`, `id_miasta`) VALUES
-(1, 'valmont', 4),
-(2, 'tino', 4),
-(3, 'pizza hut', 3),
-(4, 'polskie jadło', 7),
-(5, 'city pizza', 7),
-(6, 'kwadrans', 3),
-(7, 'pekin bar', 8),
-(8, 'Kebab star', 5),
-(9, 'Burger King', 5),
-(10, 'KFC', 6),
-(11, 'Schabowy Raz', 6),
-(12, 'Polskie Stejki', 8);
+INSERT INTO `restaurant` (`id_restauracji`, `nazwa`, `id_miasta` , `telefon` , `e-mail`) VALUES
+(1, 'valmont', 4, 4562342, 'VALMONT@VALMONT.PL'),
+(2, 'tino', 4, 5323423, 'tino@tino.pl'),
+(3, 'pizza hut', 3, 3452342, 'hut@hut.com'),
+(4, 'polskie jadło', 7, 4534212,'blabla@gmail.com'),
+(5, 'city pizza',  7, 31231223,'city@city.net'),
+(6, 'kwadrans', 3, 345232,'kw@kwkwkw.kw'),
+(7, 'pekin bar', 8, 4534,'china@pekin.pl'),
+(8, 'Kebab star', 5, 3453453,'kebab@star.pl'),
+(9, 'Burger King', 5, 3453243,'burger@king.pl'),
+(10, 'KFC', 6, 34534, 'kfc@kfc.kfc'),
+(11, 'Schabowy Raz', 6, 34534, 'schab@raz.pl'),
+(12, 'Polskie Stejki', 8, 2342321,'stejk@gmail.com');
 
 --
 -- Ograniczenia dla zrzutów tabel
