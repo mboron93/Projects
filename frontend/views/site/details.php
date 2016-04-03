@@ -53,6 +53,36 @@
                                   }
                                       ?>
 						</th>
+                                                <th>
+							ulica
+                                                        <?php 
+                                                       
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<li>'.' '.$query[$i]['ulica'].'</li>';
+                                  }
+                                      ?>
+						</th>
+                                                <th>
+							miasto
+                                                        <?php 
+                                                       
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<li>'.' '.$query[$i]['miasto'].'</li>';
+                                  }
+                                      ?>
+						</th>
+                                                <th>
+							telefon kontaktowy
+                                                        <?php 
+                                                       
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<li>'.' '.$query[$i]['telefon'].'</li>';
+                                  }
+                                      ?>
+						</th>
 						
 					</tr>
 				</thead>

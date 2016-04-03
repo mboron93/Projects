@@ -100,7 +100,14 @@ class KoszykController extends \yii\web\Controller
         return $this->render('index');
 
     }  
-    
+    public function actionDane()
+    {
+        $query = \common\models\order_detail::find()->all();
+         return $this->render('index',[
+            'query'=>$query,
+        ]);
+        
+    } 
      public function actionWyslij()
     {
 
@@ -111,7 +118,8 @@ class KoszykController extends \yii\web\Controller
      foreach ($koszyk as $l) {
        $suma += $l['cena'];
      }
-  
+     
+     
      //ustawienie zamówienia
         $order = new Order;
         $order->id_usera = (Yii::$app->user->identity->id);
