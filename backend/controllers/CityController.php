@@ -6,14 +6,15 @@ use Yii;
 use common\models\City;
 use backend\models\Cityserach;
 use yii\web\Controller;
+use yii\web\User;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * CityController implements the CRUD actions for City model.
  */
-class CityController extends Controller
-{
+class CityController extends SiteController
+{  
     public function behaviors()
     {
         return [
@@ -34,7 +35,11 @@ class CityController extends Controller
     {
         $searchModel = new Cityserach();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+ 
 
+          //echo  "Uwaga ".Yii::$app->user->identity->isAdmin();
+           
+        
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

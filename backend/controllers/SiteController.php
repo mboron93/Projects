@@ -15,7 +15,22 @@ class SiteController extends Controller
 {
     /**
      * @inheritdoc
-     */
+     */   
+    
+        public function beforeAction($e)
+  {
+       if(Yii::$app->user->isGuest)
+           {
+            \Yii::$app->getSession()->setFlash('warning', 'W tej części musisz być zalogowany !');
+                return parent::beforeAction($e);
+           }
+       else if((Yii::$app->user->identity->isAdmin())=="Admin"){
+           \Yii::$app->getSession()->setFlash('error', 'Tylko administrator ma tu dostęp !');
+           return parent::beforeAction($e);
+           //false
+       }
+  } 
+    
     public function behaviors()
     {
         return [
@@ -45,6 +60,8 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
+    
+    
     public function actions()
     {
         return [
