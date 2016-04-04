@@ -1,6 +1,7 @@
 <?php
 
 namespace frontend\controllers;
+use common\models\Dish;
 
 class DishController extends \yii\web\Controller
 {
@@ -11,9 +12,9 @@ class DishController extends \yii\web\Controller
  public function actionIndex($id)
     {
         
-     $query = \common\models\Dish::find()->where(['id_restauracji' => $id])->all();
+     $result = Dish::find()->where(['id_restauracji' => $id])->orderBy('rodzaj,nazwa_dania')->all();
         return $this->render('index',[
-            'query'=>$query,
+            'result'=>$result,
         ]);
         
     }

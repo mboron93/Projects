@@ -1,5 +1,6 @@
 <?php
 /* @var $this yii\web\View */
+/*//idRestauracji->nazwa pobierze  idRestauracji jako nazwa */
 
 $this->title = 'MENU';
 $this->params['breadcrumbs'][] = $this->title;
@@ -8,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<div class="row">
 		<div class="col-md-12">
 			<table class="table table-bordered table-condensed" id="tabela" >
-				<thead>
+				<thead >
 					<tr>
 						<th>
 							Nazwa
@@ -25,44 +26,28 @@ $this->params['breadcrumbs'][] = $this->title;
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>
-							   <?php                                                       
-                                  
-                                                       $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<p><a href="../koszyk/add?id='.$query[$i]['id_dania'].'" >'.' '.$query[$i]['nazwa_dania'].'</a></p>';
-                                  }
-                                      ?>
-						</td>
-						<td>
-							 <?php                                                       
-                                 
-                                                       $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<p>'.' '.$query[$i]['rodzaj'].'</a></p>';
-                                  }
-                                      ?>
-						</td>
-						<td>
-							<?php 
-                                                      
-                                      $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<p>'.' '.$query[$i]['opis'].'</p>';
-                                                       } 
-                                      ?>
-						</td>
-						<td>
-							<?php 
-                                                       
-                                      $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<p>'.' '.$query[$i]['koszt_dania'].'<p>';
-                                  }
-                                      ?>
-						</td>
-					</tr>
+                                    <?php 
+                                    foreach ($result as $dish) { ?>
+                                        <tr>
+                                            <td>
+                                                    <?=$dish->nazwa_dania?>
+                                            </td>
+                                            <td>
+                                                    <?=$dish->rodzaj?>
+                                            </td>
+                                            <td>
+                                                    <?=$dish->opis?>
+                                            </td>
+                                            <td>
+                                                    <?=number_format($dish->koszt_dania,2,","," ")?>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                    
+                                    
+                                     
 				</tbody>
 			</table>
 			<a href="/koszyk">
