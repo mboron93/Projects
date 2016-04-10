@@ -84,11 +84,14 @@
                                       ?>
 						</th>
 						
-					</tr>
-				</thead>
-			</table>
-
-          
+					</tr>                                                        
+				</thead>                           
+			</table>   
 		</div>
+             <a href="view/details">
+            	<button type="button">
+		dodaj adres
+		</button>
+            </a>
 	</div>
 </div>

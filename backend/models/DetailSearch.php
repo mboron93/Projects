@@ -15,12 +15,12 @@ class DetailSearch extends Detail
     /**
      * @inheritdoc
      */
-    public function rules()
+  public function rules()
     {
         return [
-            [['id_or_detail', 'id_order', 'id_dania', 'ilosc'], 'integer'],
-            [['porcja'], 'safe'],
+            [['id_or_detail', 'id_order', 'id_dania', 'porcja', 'ilosc', 'telefon'], 'integer'],
             [['cena'], 'number'],
+            [['ulica', 'miasto'], 'safe'],
         ];
     }
 
@@ -42,7 +42,7 @@ class DetailSearch extends Detail
      */
     public function search($params)
     {
-        $query = Detail::find();
+        $query = \common\models\order_detail::find();
 
         // add conditions that should always apply here
 
@@ -63,11 +63,14 @@ class DetailSearch extends Detail
             'id_or_detail' => $this->id_or_detail,
             'id_order' => $this->id_order,
             'id_dania' => $this->id_dania,
+            'porcja' => $this->porcja,
             'ilosc' => $this->ilosc,
             'cena' => $this->cena,
+            'telefon' => $this->telefon,
         ]);
 
-        $query->andFilterWhere(['like', 'porcja', $this->porcja]);
+        $query->andFilterWhere(['like', 'ulica', $this->ulica])
+            ->andFilterWhere(['like', 'miasto', $this->miasto]);
 
         return $dataProvider;
     }
