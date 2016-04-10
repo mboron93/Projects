@@ -7,6 +7,7 @@ use yii\web\Controller;
 use common\models\LoginForm;
 use common\models\User;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 
 /**
  * Site controller
@@ -16,19 +17,32 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */   
-    
-        public function beforeAction($e)
-  {
-       if(Yii::$app->user->isGuest)
-           {
-            \Yii::$app->getSession()->setFlash('warning', 'W tej części musisz być zalogowany !');
-                return parent::beforeAction($e);
-           }
-       else if((Yii::$app->user->identity->isAdmin())=="Admin"){
-           \Yii::$app->getSession()->setFlash('error', 'Tylko administrator ma tu dostęp !');
-           return parent::beforeAction($e);
-           //false
-       }
+  //  const $admin = "Admin";
+  const admin = 'Admin';
+
+
+    public function beforeAction($e)
+  { 
+        if(Yii::$app->user->isGuest)
+        {
+            return parent::beforeAction($e);
+        }
+        else{
+            if((Yii::$app->user->identity->isAdmin())== self::admin)
+                {
+                    return true;
+                }
+             else {
+              if ($this->action->getUniqueId() != 'site/error') {
+                  Yii::$app->user->logout();
+                Yii::$app->getSession()->setFlash('error', 'Nie masz praw dostępu !');
+                $this->redirect(Url::to(['site/error']));
+              }
+              else {
+               return true;
+              }
+        }  
+    }
   } 
     
     public function behaviors()

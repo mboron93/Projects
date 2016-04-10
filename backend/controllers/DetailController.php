@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * DetailController implements the CRUD actions for Detail model.
  */
-class DetailController extends Controller
+class DetailController extends SiteController
 {
     /**
      * @inheritdoc

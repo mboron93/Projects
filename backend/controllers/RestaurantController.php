@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * RestaurantController implements the CRUD actions for Restaurant model.
  */
-class RestaurantController extends Controller
+class RestaurantController extends SiteController
 {
     /**
      * @inheritdoc
