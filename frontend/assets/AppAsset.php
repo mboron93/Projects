@@ -20,6 +20,8 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/bb.css',
         'css/site.css',
+        'css/style.css',
+        'css/animate.css',
 
        #'css/animate.css',
        # 'css/style-responsive.css',
