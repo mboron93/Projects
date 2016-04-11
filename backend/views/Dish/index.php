@@ -18,7 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Dish', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -30,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'opis:ntext',
             'koszt_dania',
             'id_restauracji',
+            'rodzaj:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-
 </div>

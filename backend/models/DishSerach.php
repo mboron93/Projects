@@ -19,7 +19,7 @@ class DishSerach extends Dish
     {
         return [
             [['id_dania', 'id_restauracji'], 'integer'],
-            [['nazwa_dania', 'opis'], 'safe'],
+            [['nazwa_dania', 'opis', 'rodzaj'], 'safe'],
             [['koszt_dania'], 'number'],
         ];
     }
@@ -44,6 +44,8 @@ class DishSerach extends Dish
     {
         $query = Dish::find();
 
+        // add conditions that should always apply here
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -56,6 +58,7 @@ class DishSerach extends Dish
             return $dataProvider;
         }
 
+        // grid filtering conditions
         $query->andFilterWhere([
             'id_dania' => $this->id_dania,
             'koszt_dania' => $this->koszt_dania,
@@ -63,7 +66,8 @@ class DishSerach extends Dish
         ]);
 
         $query->andFilterWhere(['like', 'nazwa_dania', $this->nazwa_dania])
-            ->andFilterWhere(['like', 'opis', $this->opis]);
+            ->andFilterWhere(['like', 'opis', $this->opis])
+            ->andFilterWhere(['like', 'rodzaj', $this->rodzaj]);
 
         return $dataProvider;
     }

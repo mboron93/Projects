@@ -12,15 +12,18 @@ use yii\filters\VerbFilter;
 /**
  * DishController implements the CRUD actions for Dish model.
  */
-class DishController extends SiteController
+class DishController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                    'delete' => ['POST'],
                 ],
             ],
         ];

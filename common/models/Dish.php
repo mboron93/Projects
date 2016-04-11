@@ -72,13 +72,4 @@ class Dish extends \yii\db\ActiveRecord
     {
         return $this->hasMany(OrderDetail::className(), ['id_dania' => 'id_dania']);
     }
-
-    /**
-     * @inheritdoc
-     * @return DishQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new DishQuery(get_called_class());
-    }
 }

@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'opis:ntext',
             'koszt_dania',
             'id_restauracji',
+            'rodzaj:ntext',
         ],
     ]) ?>
 

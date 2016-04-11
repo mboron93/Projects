@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     foreach ($result as $dish) { ?>
                                         <tr>
                                             <td>
-                                                    <?=$dish->nazwa_dania?>
+                                                <a href="../koszyk/add?id=<?=$dish->id_dania?>"><?=$dish->nazwa_dania?></a>
                                             </td>
                                             <td>
                                                     <?=$dish->rodzaj?>
