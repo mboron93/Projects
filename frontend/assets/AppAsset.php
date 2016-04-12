@@ -18,16 +18,14 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/bb.css',
-        'css/site.css',
-        'css/style.css',
-        'css/animate.css',
-
-       #'css/animate.css',
+       'css/bootstrap.css',
+       'css/style.css',
+       'css/animate.css',
        # 'css/style-responsive.css',
        # '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
     ];
     public $js = [
+        'js/bootstrap.js',
         'js/jquery.countdown.min.js',
         'js/jquery.smooth-scroll.js',
         'js/wow.min.js',

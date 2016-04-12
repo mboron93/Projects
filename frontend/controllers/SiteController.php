@@ -73,7 +73,7 @@ class SiteController extends Controller
      */
      public function actionIndex()
     {
-                 $this->layout = 'new';
+     $this->layout = 'front';
      $query = City::find()->all();
      
 
