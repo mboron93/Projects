@@ -24,9 +24,6 @@ AppAsset::register($this);
 </head>
 <body>
     <?php $this->beginBody() ?>
-    
-    
-
 	<div class="header">
 		<div class="container">
 			<div class="top-header">
@@ -38,10 +35,10 @@ AppAsset::register($this);
 				</div>
 				<div class="header-right">
 						<div class="cart box_1">
-							<a href="checkout.html">
+							<a href="/koszyk/index">
 								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="/images/bag.png" alt=""></h3>
 							</a>	
-							<p><a href="javascript:;" class="simpleCart_empty">Empty card</a></p>
+							<p><a href="/koszyk/clean" class="simpleCart_empty">Empty card</a></p>
 							<div class="clearfix"> </div>
 						</div>
 					</div>
@@ -49,7 +46,7 @@ AppAsset::register($this);
 			</div>
 		</div>
 <div class="menu-bar">
-<div class="container">
+<div class="container" id="top">
         <div class="top-menu">
         <?php
         $menuItems = [
@@ -72,7 +69,6 @@ AppAsset::register($this);
                 . '</li>';
         }
         echo Nav::widget([
-            'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => $menuItems,
         ]);
         ?>
@@ -80,18 +76,89 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-<!-- koniec -->
+<!-- koniec menu -->
 
-    <div class="banner wow fadeInUp" data-wow-delay="0.4s" id="Home">
-        <div class="container">
-        <br/>
+ 
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
-        </div>
-    </div>
+ 
+
+		<div class="contact-section" id="contact">
+			<div class="container">
+				<div class="contact-section-grids">
+					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
+						<h4>Site Links</h4>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">About Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Contact Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Privacy Policy</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Terms of Use</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
+						<h4>Site Links</h4>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">About Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Contact Us</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Privacy Policy</a></li>
+						</ul>
+						<ul>
+							<li><i class="point"></i></li>
+							<li class="data"><a href="#">Terms of Use</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid wow fadeInRight" data-wow-delay="0.4s">
+						<h4>Follow Us On...</h4>
+						<ul>
+							<li><i class="fb"></i></li>
+							<li class="data"> <a href="#">  Facebook</a></li>
+						</ul>
+						<ul>
+							<li><i class="tw"></i></li>
+							<li class="data"> <a href="#">Twitter</a></li>
+						</ul>
+						<ul>
+							<li><i class="in"></i></li>
+							<li class="data"><a href="#"> Linkedin</a></li>
+						</ul>
+						<ul>
+							<li><i class="gp"></i></li>
+							<li class="data"><a href="#">Google Plus</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 contact-section-grid nth-grid wow fadeInRight" data-wow-delay="0.4s">
+						<h4>Subscribe Newsletter</h4>
+						<p>To get latest updates and food deals every week</p>
+						<input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+						<input type="submit" value="submit">
+						</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+
+	<!-- content-section-ends -->
+        
 	<!-- footer-section-starts -->
 	<div class="footer">
 		<div class="container">
@@ -114,7 +181,7 @@ AppAsset::register($this);
 							
 						});
 					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+				<a href="#top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 <?php $this->endBody() ?>
 </body>

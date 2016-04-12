@@ -25,7 +25,6 @@ class AppAsset extends AssetBundle
        # '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
     ];
     public $js = [
-        'js/bootstrap.js',
         'js/jquery.countdown.min.js',
         'js/jquery.smooth-scroll.js',
         'js/wow.min.js',

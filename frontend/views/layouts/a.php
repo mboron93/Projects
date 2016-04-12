@@ -80,15 +80,18 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-<!-- koniec menu -->
+<!-- koniec -->
 
- 
+    <div class="banner wow fadeInUp" data-wow-delay="0.4s" id="Home">
+        <div class="container">
+        <br/>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
- 
+        </div>
+    </div>
 	<!-- footer-section-starts -->
 	<div class="footer">
 		<div class="container">

@@ -1,3 +1,32 @@
+<h1>miasta</h1>
+  	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+                    
+                    <label for="sel1">Wybierz miasto waćpanie:</label>
+			<div class="btn-group">
+                              
+				<button class="btn btn-default">
+					Miasto
+				</button> 
+				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+                                      <?php 
+                                   
+                                      $result = count($query);
+                                      for($i=0; $i<$result ;$i++){
+                                   echo  '<li><a href="/site/restaurant?id='.$query[$i]['id_miasta'].'">'.$query[$i]['miasto'].'</a></li>';
+                                      }
+                                      ?>
+				</ul>
+                           
+			</div> 
+		</div>
+	</div>
+</div>
+
 		<div class="banner wow fadeInUp" data-wow-delay="0.4s" id="Home">
 		    <div class="container">
 				<div class="banner-info">
@@ -23,31 +52,10 @@
 						  </ul>
 						</form>
                                             
-						</div>
-                                    
-                                            <div class="btn-group">
-            <span>Wybierz miasto:</span>
-        <button class="btn btn-default">
-            Miasto
-        </button> 
-        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                    <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                  <?php 
-
-                  $result = count($query);
-                  for($i=0; $i<$result ;$i++){
-               echo  '<li><a href="/site/restaurant?id='.$query[$i]['id_miasta'].'">'.$query[$i]['miasto'].'</a></li>';
-                  }
-                  ?>
-            </ul>
-    </div>
-					<!-- start search-->
-		
-					
+						</div>				
 				</div>
 			</div>
+
 		</div>
 <!-- content-section-starts -->
 	<div class="content">
@@ -336,75 +344,4 @@
 				</div>
 			</div>
 		</div>
-		<div class="contact-section" id="contact">
-			<div class="container">
-				<div class="contact-section-grids">
-					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
-						<h4>Site Links</h4>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">About Us</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Contact Us</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Privacy Policy</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Terms of Use</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 contact-section-grid wow fadeInLeft" data-wow-delay="0.4s">
-						<h4>Site Links</h4>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">About Us</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Contact Us</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Privacy Policy</a></li>
-						</ul>
-						<ul>
-							<li><i class="point"></i></li>
-							<li class="data"><a href="#">Terms of Use</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 contact-section-grid wow fadeInRight" data-wow-delay="0.4s">
-						<h4>Follow Us On...</h4>
-						<ul>
-							<li><i class="fb"></i></li>
-							<li class="data"> <a href="#">  Facebook</a></li>
-						</ul>
-						<ul>
-							<li><i class="tw"></i></li>
-							<li class="data"> <a href="#">Twitter</a></li>
-						</ul>
-						<ul>
-							<li><i class="in"></i></li>
-							<li class="data"><a href="#"> Linkedin</a></li>
-						</ul>
-						<ul>
-							<li><i class="gp"></i></li>
-							<li class="data"><a href="#">Google Plus</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 contact-section-grid nth-grid wow fadeInRight" data-wow-delay="0.4s">
-						<h4>Subscribe Newsletter</h4>
-						<p>To get latest updates and food deals every week</p>
-						<input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-						<input type="submit" value="submit">
-						</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- content-section-ends -->
+
