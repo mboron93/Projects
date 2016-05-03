@@ -4,14 +4,15 @@
 
 use yii\helpers\Html;
 
-$this->title = 'HISTORIA ZAMÓWIEŃ WAĆPANA';
+$this->title = 'HISTORIA ZAMÓWIEŃ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
-<div class="container-fluid">
-	<div class="row">
+<center>
+<div class="cart-items">
+	<div class="container">
 		<div class="col-md-12">
-                    <label for="sel1">Wybierz zamówienie by poznać szczegóły:</label>
+                    <h1> Historia zamówienia </h1>
+                    <label for="sel1">Wybierz zamówienie: </label>
 			<div class="btn-group">
                               
 				<button class="btn btn-default">
@@ -33,3 +34,4 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 	</div>
 </div>
+</center>

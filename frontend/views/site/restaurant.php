@@ -4,11 +4,12 @@
 $this->title = 'RESTAURACJE';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<center>
 <h1>restauracje</h1>
-  	<div class="container-fluid">
-	<div class="row">
+  	<div class="cart-items">
+	<div class="container">
 		<div class="col-md-12">
-                    <label for="sel1">Wybierz restauracje waćpanie:</label>
+                    <label for="sel1">Wybierz restauracje :</label>
 			<div class="btn-group">
                               
 				<button class="btn btn-default">
@@ -30,3 +31,4 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 	</div>
 </div>
+</center>

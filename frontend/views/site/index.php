@@ -1,6 +1,7 @@
-<h1>miasta</h1>
-  	<div class="container-fluid">
-	<div class="row">
+<center>
+<h2>miasta</h2>
+  	<div class="cart-items">
+	<div class="container">
 		<div class="col-md-12">
                     
                     <label for="sel1">Wybierz miasto waćpanie:</label>
@@ -26,7 +27,7 @@
 		</div>
 	</div>
 </div>
-
+</center>
 		<div class="banner wow fadeInUp" data-wow-delay="0.4s" id="Home">
 		    <div class="container">
 				<div class="banner-info">
@@ -278,36 +279,7 @@
 			</div>
 		</div>
 		<div class="service-section">
-			<div class="service-section-top-row">
-				<div class="container">
-					<div class="service-section-top-row-grids wow bounceInLeft" data-wow-delay="0.4s">
-					<div class="col-md-3 service-section-top-row-grid1">
-						<h3>Enjoy Exclusive Food Order any of these</h3>
-					</div>
-					<div class="col-md-2 service-section-top-row-grid2">
-						<ul>
-							<li><i class="arrow"></i></li>
-							<li class="lists">Party Orders</li>
-						</ul>
-						<ul>
-							<li><i class="arrow"></i></li>
-							<li class="lists">Home Made Food</li>
-						</ul>
-						<ul>
-							<li><i class="arrow"></i></li>
-							<li class="lists"> Diet Food </li>
-						</ul>
-					</div>
-					<div class="col-md-5 service-section-top-row-grid3">
-						<img src="/images/lunch.png" class="img-responsive" alt="" />
-					</div>
-					<div class="col-md-2 service-section-top-row-grid4 wow swing animated" data-wow-delay= "0.4s">
-						<a href="order.html"><input type="submit" value="Order Now"></a>
-					</div>
-					<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
+		
 			<div class="service-section-bottom-row">
 				<div class="container">
 					<div class="col-md-4 service-section-bottom-grid wow bounceIn "data-wow-delay="0.2s">

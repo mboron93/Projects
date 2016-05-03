@@ -8,28 +8,23 @@
 ?>
 
 
-<div class="container-fluid">
-	<div class="row">
+<div class="cart-items">
+	<div class="container">
 		<div class="col-md-12">
-			<h1>
-				historia zamówienia
-			</h1>
-			
-			<table class="table">
-				<thead>
+			<h1>historia zamówienia</h1>
+			<div class="cart-header">
+                             <div class="cart-sec simpleCart_shelfItem">
+                                 <table class="table">
+                                     
+                                    <thead>
 					<tr>
-                                                <th>
-                                                     
+                                                <th>     
 							nazwa_dania
-                                                        <?php                                                       
-                                 
+                                                        <?php
                                                        $result = count($query);
                                       for($i=0; $i<$result ;$i++){
-                                       
                                           $x=$query[$i]['id_dania']-3;
-                                          
-                                        
-                                   echo  '<li>'.' '.$query1[$x]['nazwa_dania'].'</li>';
+                                          echo  '<li>'.' '.$query1[$x]['nazwa_dania'].'</li>';
                                   }
                                       ?>
 						</th>
@@ -53,45 +48,14 @@
                                   }
                                       ?>
 						</th>
-                                                <th>
-							ulica
-                                                        <?php 
-                                                       
-                                      $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['ulica'].'</li>';
-                                  }
-                                      ?>
-						</th>
-                                                <th>
-							miasto
-                                                        <?php 
-                                                       
-                                      $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['miasto'].'</li>';
-                                  }
-                                      ?>
-						</th>
-                                                <th>
-							telefon kontaktowy
-                                                        <?php 
-                                                       
-                                      $result = count($query);
-                                      for($i=0; $i<$result ;$i++){
-                                   echo  '<li>'.' '.$query[$i]['telefon'].'</li>';
-                                  }
-                                      ?>
-						</th>
-						
-					</tr>                                                        
-				</thead>                           
+	
+					</tr>   
+                                     </div>
+				</thead> 
+
 			</table>   
 		</div>
-             <a href="view/details">
-            	<button type="button">
-		dodaj adres
-		</button>
-            </a>
+             </div>
+
 	</div>
 </div>
