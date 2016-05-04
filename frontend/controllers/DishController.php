@@ -1,7 +1,9 @@
 <?php
 
 namespace frontend\controllers;
+use Yii;
 use common\models\Dish;
+use backend\models\DishSerach;
 
 class DishController extends \yii\web\Controller
 {
@@ -11,11 +13,17 @@ class DishController extends \yii\web\Controller
     }
  public function actionIndex($id)
     {
-        
-     $result = Dish::find()->where(['id_restauracji' => $id])->orderBy('rodzaj,nazwa_dania')->all();
+        $searchModel = new DishSerach();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    /* $result = Dish::find()->where(['id_restauracji' => $id])->orderBy('rodzaj,nazwa_dania')->all();
         return $this->render('index',[
             'result'=>$result,
-        ]);
+        ]);*/
         
     }
 }
