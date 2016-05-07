@@ -73,7 +73,7 @@
 						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s"">
 							<i class="one"></i><br>
 							<i class="one-icon"></i>
-							<p>Wybierz <span>Swoją Restauracje</span></p>
+							<p>Wybierz <span>Restauracje</span></p>
 							<label></label>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s"">
 							<i class="three"></i><br>
 							<i class="three-icon"></i>
-							<p>Zapłać <span> online lub przy dostawie</span></p>
+							<p>Zapłać <span> online</span></p>
 							<label></label>
 						</div>
 					</div>
@@ -97,7 +97,7 @@
 						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s"">
 							<i class="four"></i><br>
 							<i class="four-icon"></i>
-							<p>Ciesz się <span>swoim jedzeniem </span></p>
+							<p>Ciesz się <span>jedzeniem </span></p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
