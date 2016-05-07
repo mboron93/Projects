@@ -1,14 +1,14 @@
 <center>
-<h2>miasta</h2>
+<h2>WYBIERZ SWOJE MIASTO</h2>
   	<div class="cart-items">
 	<div class="container">
 		<div class="col-md-12">
                     
-                    <label for="sel1">Wybierz miasto waćpanie:</label>
+                   
 			<div class="btn-group">
                               
 				<button class="btn btn-default">
-					Miasto
+					lista miast do wyboru
 				</button> 
 				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
 					<span class="caret"></span>
@@ -142,35 +142,35 @@
 					<div class="top-cuisine-grids">
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine1.jpg" class="img-responsive" alt="" /> </a>
-							<label>Nazwa Dania:</label>
+							<label>Pizza</label>
 					    </div>
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine2.jpg" class="img-responsive" alt="" /> </a>
-							<label>Nazwa Dania:</label>
+							<label>Hamburgery</label>
 					    </div>
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine3.jpg" class="img-responsive" alt="" /> </a>
-							<label>Nazwa Dania:</label>
+							<label>Desery</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine4.jpg" class="img-responsive" alt="" /> </a>
-							<label>Nazwa Dania:</label>
+							<label>Dania Ostre</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine5.jpg" class="img-responsive" alt="" /> </a>
-							<label>Nazwa Dania:</label>
+							<label>Dania fastfoodowe</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine6.jpg" class="img-responsive" alt="" /> </a>
-							<label>Nazwa Dania:</label>
+							<label>Dania fit</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine7.jpg" class="img-responsive" alt="" /> </a>
-							<label>Nazwa Dania:</label>
+							<label>Dania włoskie</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine8.jpg" class="img-responsive" alt="" /> </a>
-							<label>Nazwa Dania:</label>
+							<label>Dania orientalne</label>
 					    </div>
 						<div class="clearfix"></div>
 					</div>

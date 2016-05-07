@@ -11,12 +11,12 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="cart-items">
 	<div class="container">
 		<div class="col-md-12">
-                    <h1> Historia zamówienia </h1>
-                    <label for="sel1">Wybierz zamówienie: </label>
+                    <h1> Historia twoich zamówień </h1>
+                    <label for="sel1"></label>
 			<div class="btn-group">
                               
 				<button class="btn btn-default">
-					zamówienia:
+					wybierz zamówienie z listy
 				</button> 
 				<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
 					<span class="caret"></span>

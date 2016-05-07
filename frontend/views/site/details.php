@@ -11,7 +11,7 @@
 <div class="cart-items">
 	<div class="container">
 		<div class="col-md-12">
-			<h1>historia zamówienia</h1>
+			<h1>Historia twoich zamówień</h1>
 			<div class="cart-header">
                              <div class="cart-sec simpleCart_shelfItem">
                                  <table class="table">
