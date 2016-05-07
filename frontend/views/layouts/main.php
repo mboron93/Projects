@@ -31,14 +31,14 @@ AppAsset::register($this);
 					<a href="index.html"><img src="/images/logo.png" class="img-responsive" alt="" /></a>
 				</div>
 				<div class="queries">
-					<p>Questions? Call us Toll-free!<span>1800-0000-7777 </span><label>(11AM to 11PM)</label></p>
+					<p>Pytania? Zadzwoń do nas<span>0000-0000-0000 </span><label>(od 11 do 22)</label></p>
 				</div>
 				<div class="header-right">
 						<div class="cart box_1">
 							<a href="/koszyk/index">
-								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="/images/bag.png" alt=""></h3>
+								<h3> <span class="simpleCart_total"> 0.00 zł </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> produktów)<img src="/images/bag.png" alt=""></h3>
 							</a>	
-							<p><a href="/koszyk/clean" class="simpleCart_empty">Empty card</a></p>
+							<p><a href="/koszyk/clean" class="simpleCart_empty">Pusty Koszyk</a></p>
 							<div class="clearfix"> </div>
 						</div>
 					</div>

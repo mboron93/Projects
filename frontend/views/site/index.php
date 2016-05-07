@@ -32,23 +32,23 @@
 		    <div class="container">
 				<div class="banner-info">
 					<div class="banner-info-head text-center wow fadeInLeft" data-wow-delay="0.5s">
-						<h1>Network of over 5000 Restaurants</h1>
+						<h1>Sieć z około 100 Restauracjami w Trójmieście</h1>
 						<div class="line">
-							<h2> To Order Online</h2>
+							<h2> Do zamówienia Online</h2>
 						</div>
 					</div>
 					<div class="form-list wow fadeInRight" data-wow-delay="0.5s">
                                             
 						<form>
 						  <ul class="navmain">
-							<li><span>Location Name</span>
-							 <input type="text" class="text" value="Secunderabad" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Secunderabad';}">
+							<li><span>Nazwa lokalizacji</span>
+							 <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 							</li>
-							<li><span>Restaurant Name</span>
-							 <input type="text" class="text" value="Swagath Grand" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Swagath Grand';}">
+							<li><span>Nazwa restauracji</span>
+							 <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 							</li>
-							<li><span>Cuisine Name</span>
-							 <input type="text" class="text" value="Chicken Biriyani" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Chicken Biriyani';}">
+							<li><span>Nazwa dania</span>
+							 <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 						    </li>
 						  </ul>
 						</form>
@@ -63,9 +63,9 @@
 		<div class="ordering-section" id="Order">
 			<div class="container">
 				<div class="ordering-section-head text-center wow bounceInRight" data-wow-delay="0.4s">
-					<h3>Ordering food was never so easy</h3>
+					<h3>Zamawianie jedzenia nigdy nie było takie łatwe jak teraz</h3>
 					<div class="dotted-line">
-						<h4>Just 4 steps to follow </h4>
+						<h4>Wystarczą 4 kroki </h4>
 					</div>
 				</div>
 				<div class="ordering-section-grids">
@@ -73,7 +73,7 @@
 						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s"">
 							<i class="one"></i><br>
 							<i class="one-icon"></i>
-							<p>Choose <span>Your Restaurant</span></p>
+							<p>Wybierz <span>Swoją Restauracje</span></p>
 							<label></label>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s"">
 							<i class="two"></i><br>
 							<i class="two-icon"></i>
-							<p>Order  <span>Your Cuisine</span></p>
+							<p>Zamów  <span>Swoje Danie</span></p>
 							<label></label>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s"">
 							<i class="three"></i><br>
 							<i class="three-icon"></i>
-							<p>Pay   <span> online / on delivery</span></p>
+							<p>Zapłać <span> online lub przy dostawie</span></p>
 							<label></label>
 						</div>
 					</div>
@@ -97,7 +97,7 @@
 						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s"">
 							<i class="four"></i><br>
 							<i class="four-icon"></i>
-							<p>Enjoy <span>your food </span></p>
+							<p>Ciesz się <span>swoim jedzeniem </span></p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -109,7 +109,7 @@
 			<div class="container">
 				<div class="col-md-4 top-restaurents">
 					<div class="top-restaurent-head">
-						<h3>Top Restaurants</h3>
+						<h3>Najlepsze Restauracje</h3>
 					</div>
 					<div class="top-restaurent-grids">
 						<div class="top-restaurent-logos">
@@ -137,40 +137,40 @@
 				</div>
 				<div class="col-md-8 top-cuisines">
 					<div class="top-cuisine-head">
-						<h3>Top Cuisines</h3>
+						<h3>Najlepsze Dania</h3>
 					</div>
 					<div class="top-cuisine-grids">
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine1.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+							<label>Nazwa Dania:</label>
 					    </div>
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine2.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+							<label>Nazwa Dania:</label>
 					    </div>
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine3.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+							<label>Nazwa Dania:</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine4.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+							<label>Nazwa Dania:</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine5.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+							<label>Nazwa Dania:</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine6.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+							<label>Nazwa Dania:</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine7.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+							<label>Nazwa Dania:</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine8.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+							<label>Nazwa Dania:</label>
 					    </div>
 						<div class="clearfix"></div>
 					</div>
@@ -187,8 +187,9 @@
 							<img src="/images/icon1.jpg" class="img-responsive" alt="" />
 						</div>
 						<div class="icon-data">
-							<h4>100% Service Guarantee</h4>
-							<p>Lorem ipsum dolor sit amet, consect-etuer adipiscing elit. </p>
+							<h4>100% Gwarancja serwisu</h4>
+							<p>Brak ukrytych kosztów</p>
+                                                        <p>Ceny jak w restauracji</p>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -197,8 +198,9 @@
 							<img src="/images/icon2.jpg" class="img-responsive" alt="" />
 						</div>
 						<div class="icon-data">
-							<h4>Fully Secure Payment</h4>
-							<p>Lorem ipsum dolor sit amet, consect-etuer adipiscing elit. </p>
+							<h4>Pełna Ochrona Płatności</h4>
+							<p>Nie pobieramy żadnej dodatkowej opłaty za płatność online</p>
+                                                        <p>100% poufność informacji</p>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -207,8 +209,8 @@
 							<img src="/images/icon3.jpg" class="img-responsive" alt="" />
 						</div>
 						<div class="icon-data">
-							<h4>Track Your Order</h4>
-							<p>Lorem ipsum dolor sit amet, consect-etuer adipiscing elit. </p>
+							<h4>Śledź swoje zamówienie</h4>
+							<p>Możliwość śledzenia swojego zamówienia online</p>
 						</div>
 						<div class="clearfix"></div>
 					</div>
