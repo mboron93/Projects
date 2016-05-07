@@ -50,7 +50,7 @@ class KoszykController extends \yii\web\Controller
          foreach ($koszyk as $key => $pozycja) {
                           $razem+=$koszyk[$key]['ilosc']*$koszyk[$key]['cena'];
                         }
-        $i= count($koszyk).'dania, o wartości: '.$razem.' zł';
+        $i= count($koszyk).'poz., o wartości: '.$razem.' zł';
         return $i;
     }
 
