@@ -47,10 +47,13 @@ class KoszykController extends \yii\web\Controller
     {
         $razem =0;
         $koszyk = Yii::$app->session->get('zamowione');
+         if (is_array($koszyk)) {
+        
          foreach ($koszyk as $key => $pozycja) {
                           $razem+=$koszyk[$key]['ilosc']*$koszyk[$key]['cena'];
                         }
-        $i= count($koszyk).'poz., o wartości: '.$razem.' zł';
+         }
+        $i= count($koszyk).' poz., o wartości: '.$razem.' zł';
         return $i;
     }
 
