@@ -43,6 +43,18 @@ class KoszykController extends \yii\web\Controller
            //id //nazwa //porcja // ilosc //cena
     }
     
+    public function  actionLiczba()
+    {
+        $razem =0;
+        $koszyk = Yii::$app->session->get('zamowione');
+         foreach ($koszyk as $key => $pozycja) {
+                          $razem+=$koszyk[$key]['ilosc']*$koszyk[$key]['cena'];
+                        }
+        $i= count($koszyk).'dania, o wartości: '.$razem.' zł';
+        return $i;
+    }
+
+
     public function actionAdd($id)//wyświetlanie
     {
         //find dish WHERE is $id
@@ -97,7 +109,7 @@ class KoszykController extends \yii\web\Controller
           Yii::$app->session->set('zamowione',$nowykoszyk);
          \Yii::$app->getSession()->setFlash('success', 'Usunęto pozycję: '.$id);
         }
-        return $this->render('index');
+return $this->actionIndex();
 
     }  
     public function actionDane()

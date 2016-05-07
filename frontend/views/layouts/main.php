@@ -36,9 +36,12 @@ AppAsset::register($this);
 				<div class="header-right">
 						<div class="cart box_1">
 							<a href="/koszyk/index">
-								<h3> <span class="simpleCart_total"> 0.00 zł </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> produktów)<img src="/images/bag.png" alt=""></h3>
+                                                            <h3><p>W koszyku:</p>
+                <span id="simpleCart_quantity" class="simpleCart_quantity"><?= Yii::$app->runAction('koszyk/liczba');?> </span>
+                <img src="/images/bag.png" alt="">
+                </h3>
 							</a>	
-							<p><a href="/koszyk/clean" class="simpleCart_empty">Pusty Koszyk</a></p>
+							<p><a href="/koszyk/clean" class="simpleCart_empty">Opróźnij koszyk</a></p>
 							<div class="clearfix"> </div>
 						</div>
 					</div>

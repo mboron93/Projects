@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="cart-items">
 	<div class="container">
             <?php if(isset($settings)&&!empty($settings)){?>
-			 <h1>Twój Koszyk (3)</h1>
+			 <h1>Twój Koszyk</h1>
                        <?php  foreach ($settings as $index) { ?>
 			 <div class="cart-header">
                              <a href="/koszyk/usun?id=<?=$index['id']?>"><div class="close1"></div></a>
