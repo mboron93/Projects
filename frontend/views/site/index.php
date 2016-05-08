@@ -142,19 +142,19 @@
 					<div class="top-cuisine-grids">
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine1.jpg" class="img-responsive" alt="" /> </a>
-							<label>Pizza</label>
+							<label>włoska Pizza </label>
 					    </div>
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine2.jpg" class="img-responsive" alt="" /> </a>
-							<label>Hamburgery</label>
+							<label>Hamburgerry</label>
 					    </div>
 						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine3.jpg" class="img-responsive" alt="" /> </a>
-							<label>Desery</label>
+							<label>słodkie Desery </label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine4.jpg" class="img-responsive" alt="" /> </a>
-							<label>Dania Ostre</label>
+							<label>Dania Ostrre</label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine5.jpg" class="img-responsive" alt="" /> </a>
@@ -162,7 +162,7 @@
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine6.jpg" class="img-responsive" alt="" /> </a>
-							<label>Dania fit</label>
+							<label>Dania wegańskie </label>
 					    </div>
 						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
 						    <a href=""><img src="/images/cuisine7.jpg" class="img-responsive" alt="" /> </a>
