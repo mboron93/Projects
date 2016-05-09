@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Dish;
 use backend\models\DishSerach;
+use yii\data\ActiveDataProvider;
 
 class DishController extends \yii\web\Controller
 {
@@ -13,12 +14,20 @@ class DishController extends \yii\web\Controller
     }
  public function actionIndex($id)
     {
-        $searchModel = new DishSerach();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+     
+     $query = DishSerach::find()->where(['id_restauracji'=>$id]);
+
+$dataProvider = new ActiveDataProvider([
+    'query' => $query,
+]);
+
+//        $searchModel = new DishSerach();
+//        $dataProvider = $searchModel->find()->where(['id_restauracji'=>$id])->all();
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+             'dataProvider' => $dataProvider,
+
         ]);
     /* $result = Dish::find()->where(['id_restauracji' => $id])->orderBy('rodzaj,nazwa_dania')->all();
         return $this->render('index',[
