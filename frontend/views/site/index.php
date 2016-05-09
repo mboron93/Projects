@@ -89,7 +89,7 @@
 						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s"">
 							<i class="three"></i><br>
 							<i class="three-icon"></i>
-							<p>Zapłać <span> online</span></p>
+							<p>Zapłać <br><span> online</span></p>
 							<label></label>
 						</div>
 					</div>
