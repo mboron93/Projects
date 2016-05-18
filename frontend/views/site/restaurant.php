@@ -5,6 +5,7 @@ $this->title = 'RESTAURACJE';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <center>
+    Wybrałeś Miasto:<a href="delete"><?=$miasto?></a>
 <h1>wybierz swoją restauracje</h1>
   	<div class="cart-items">
 	<div class="container">

@@ -73,27 +73,52 @@ class SiteController extends Controller
      */
      public function actionIndex()
     {
-
-     $query = City::find()->all();
-     
-
-        return $this->render('index',[
-            'query'=>$query,
-        ]);
-        
+       
+        $cookies = Yii::$app->request->cookies;
+         if($cookies->has('miasto'))
+         {
+            
+            return $this->actionRestaurant($cookies->getValue('miasto'));
+         }
+         else 
+         {
+             $query = City::find()->all();
+             
+            return $this->render(
+                'index',[
+                'query'=>$query,
+            ]);
+         }
     }
     
        public function actionRestaurant($id)
     {
+       if(!isset($cookies['miasto']))
+       {
+           $cookies = Yii::$app->response->cookies;
+            $cookies->add(new \yii\web\Cookie([
+                'name' => 'miasto',
+                'value' => $id,
+            ]));
+       }
+     $miasta = \common\models\City::find()->select('miasto')->where(['id_miasta' => $id])->one();
+     $miasto = $miasta->miasto;
 
      $query = \common\models\Restaurant::find()->where(['id_miasta' => $id])->all();
- 
+     
         return $this->render('restaurant',[
             'query'=>$query,
+            'miasto'=> $miasto,
         ]);
         
     } 
+public function actionDelete()
+    {
+        $cookies = Yii::$app->response->cookies;
+        $cookies->remove('miasto');
 
+        return $this->redirect('index');
+    }
     
     public function actionPlan()
     {
