@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * DishController implements the CRUD actions for Dish model.
  */
-class DishController extends Controller
+class DishController extends SiteController
 {
     /**
      * @inheritdoc

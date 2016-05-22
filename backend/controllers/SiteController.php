@@ -19,6 +19,7 @@ class SiteController extends Controller
      */   
   //  const $admin = "Admin";
   const admin = 'Admin';
+  const boss = 'Boss';
 
 
     public function beforeAction($e)
@@ -32,6 +33,8 @@ class SiteController extends Controller
                 {
                     return true;
                 }
+            else if((Yii::$app->user->identity->isAdmin())== self::boss)
+                {$this->redirect(Url::to(['boss/index']));}
              else {
               if ($this->action->getUniqueId() != 'site/error') {
                   Yii::$app->user->logout();

@@ -31,7 +31,7 @@ class User extends ActiveRecord implements IdentityInterface
     private $_userTable = array
     (
         0=>'Normal',
-        2=>'Restaurant',
+        2=>'Boss',
         5=>'Moderator',
         10=>'Admin'
     );
