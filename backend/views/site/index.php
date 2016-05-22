@@ -16,6 +16,9 @@ $this->title = 'My Yii Application';
                                         <h4 class="list-group-item">
                                             <a href="/restaurant">Dodaj / Usuń Restaurację</a><span class="badge">+/-</span>
 					</h4>
+                                         <h4 class="list-group-item">
+                                            <a href="/type">Dodaj / Usuń typ restauracji</a><span class="badge">+/-</span>
+					</h4>
                                         <h4 class="list-group-item">
                                             <a href="/dish">Dodaj / Usuń Danie</a><span class="badge">+/-</span>
 					</h4>
